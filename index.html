@@ -1,305 +1,267 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
 <head>
-<!-- The title tag is also shown in browser's tab-->
-<title>Tomas Geffner | Research Scientist @ NVIDIA</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Tomas Geffner is a senior research scientist at NVIDIA working on generative models, sampling methods, and machine learning for science.">
+<title>Tomas Geffner | Senior Research Scientist at NVIDIA</title>
+<style>
+:root { color-scheme: dark; --bg:#12191d; --surface:#192227; --text:#e7ecec; --muted:#a4b3b7; --soft:#8a9ca2; --line:#304047; --accent:#a6d6ca; --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
+* { box-sizing:border-box; }
+html { scroll-padding-top:28px; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:var(--font); font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased; }
+::selection { background:var(--accent); color:var(--bg); }
+a { color:inherit; text-decoration:none; text-underline-offset:4px; }
+a:hover { color:var(--accent); }
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible { outline:2px solid var(--accent); outline-offset:5px; }
+button,input,select { font:inherit; }
+p,h1,h2,h3,figure,ul,dl { margin:0; }
+h1,h2,h3 { line-height:1.25; }
+p { overflow-wrap:break-word; }
+[hidden] { display:none !important; }
+.skip-link { position:fixed; top:12px; left:12px; transform:translateY(-160%); z-index:10; padding:10px 16px; background:var(--text); color:var(--bg); }
+.skip-link:focus { transform:translateY(0); }
+.page { max-width:1104px; margin:0 auto; padding:0 48px; }
+.topbar { display:flex; gap:28px; align-items:center; padding:30px 0; border-bottom:1px solid var(--line); font-size:13px; }
+.site-nav { display:flex; gap:24px; color:var(--muted); }
+.site-nav a { padding:5px 0; }
+.eyebrow { color:var(--accent); font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.13em; }
+.profile-links { display:flex; flex-wrap:wrap; gap:24px; margin-top:27px; font-size:13px; }
+.profile-links a { padding-bottom:3px; border-bottom:1px solid var(--line); }
+.profile-links span { color:var(--accent); margin-left:3px; }
+.portrait { flex-shrink:0; }
+.portrait img { display:block; width:100%; height:auto; border-radius:3px; }
+.portrait figcaption { color:var(--soft); font-size:11px; margin-top:9px; }
+.section { padding:48px 0; border-top:1px solid var(--line); }
+.section-heading { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:30px; }
+.section-heading h2 { font-size:25px; font-weight:550; letter-spacing:-.6px; }
+.section-heading > p { color:var(--soft); font-size:12px; }
+.year-group { display:grid; grid-template-columns:76px minmax(0,1fr); column-gap:36px; padding-top:24px; }
+.year-group + .year-group { margin-top:22px; border-top:1px solid var(--line); }
+.year-heading { padding-top:1px; color:var(--accent); font-size:17px; font-weight:500; font-variant-numeric:tabular-nums; }
+.paper-list { padding:0; list-style:none; min-width:0; }
+.paper { padding:0 0 26px; }
+.paper + .paper { padding-top:25px; border-top:1px solid var(--line); }
+.paper-title { font-size:18px; font-weight:550; line-height:1.5; letter-spacing:-.2px; }
+.paper-title a:hover { text-decoration:underline; text-decoration-thickness:1px; }
+.authors { margin-top:8px; font-size:12px; line-height:1.85; color:var(--muted); }
+.authors u { color:var(--text); font-weight:600; text-decoration:none; }
+.venue { color:var(--soft); font-size:11px; letter-spacing:.02em; margin-top:10px; }
+.venue strong { color:var(--accent); font-weight:500; }
+.about-copy { max-width:780px; color:var(--muted); font-size:14px; line-height:1.9; }
+.about-copy p + p { margin-top:18px; }
+.service-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; color:var(--muted); font-size:13px; }
+.service-grid h3 { color:var(--text); font-size:13px; font-weight:550; margin-bottom:18px; }
+.service-grid h3:not(:first-child) { margin-top:28px; }
+.review-list > div { display:grid; grid-template-columns:74px 1fr; gap:14px; padding-bottom:6px; }
+dd { margin:0; }
+.teaching-list { padding:0; list-style:none; }
+.teaching-list li { padding-bottom:8px; }
+footer { border-top:1px solid var(--line); padding:40px 0 24px; }
+.contact-block { display:flex; justify-content:space-between; gap:32px; padding-bottom:42px; }
+.contact-block h2 { margin-top:8px; font-size:28px; font-weight:500; letter-spacing:-.6px; }
+.contact-details { font-size:13px; }
+.contact-details > div { display:flex; gap:28px; margin-bottom:9px; }
+.contact-details dt { width:65px; color:var(--soft); }
+.contact-details dd { overflow-wrap:anywhere; }
+.footer-bottom { display:flex; justify-content:space-between; gap:20px; border-top:1px solid var(--line); padding-top:20px; color:var(--soft); font-size:11px; }
+@media(max-width:760px) {
+ .page { padding:0 24px; }
+ .topbar { flex-wrap:wrap; gap:14px; padding:22px 0; }
+ .site-nav { gap:18px; font-size:12px; }
+ .section { padding:36px 0; }
+ .year-group { grid-template-columns:48px minmax(0,1fr); gap:20px; }
+ .year-heading { font-size:14px; }
+ .paper-title { font-size:17px; }
+ .service-grid { grid-template-columns:1fr; gap:32px; }
+ .contact-block { flex-direction:column; }
+ .contact-details > div { gap:16px; }
+}
+@media(max-width:400px) { .page { padding:0 20px; } .site-nav { gap:12px; } .year-group { grid-template-columns:1fr; gap:18px; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+@media print { :root { --bg:white; --text:#111; --muted:#333; --soft:#444; --line:#bbb; --accent:#222; } .site-nav,.skip-link { display:none!important; } .page { max-width:none; padding:0; } .paper { break-inside:avoid; } }
+
+.hero { display:grid; grid-template-columns:minmax(0,1fr) 210px; gap:72px; align-items:center; padding:64px 0 58px; }
+.hero h1 { font-size:62px; font-weight:550; letter-spacing:-2.9px; margin:0 0 22px; }
+.hero .role { font-size:16px; line-height:1.85; color:var(--muted); max-width:560px; }
+.hero .role a { color:var(--text); text-decoration:underline; text-decoration-color:var(--line); }
+.hero .research { font-size:14px; line-height:1.85; color:var(--muted); margin-top:17px; max-width:560px; }
+.hero .portrait { padding-top:8px; }
+.publications { padding-top:37px; }
+.publications .section-heading { margin-bottom:18px; }
+@media(max-width:760px) { .hero { grid-template-columns:1fr 150px; gap:30px; padding:42px 0; } .hero h1 { font-size:46px; letter-spacing:-2px; } .hero .role { font-size:14px; } .hero .research { font-size:13px; } }
+@media(max-width:560px) { .hero { grid-template-columns:1fr; gap:28px; } .hero h1 { font-size:45px; } .hero .portrait { width:144px; } .hero .portrait img { height:150px; object-fit:cover; object-position:50% 58%; } .hero .profile-links { gap:18px; } }
+</style>
 </head>
-
-
-<body>
-<h1>
-Tomas Geffner
-</h1>
-<p>
-<!-- Replace with a personal image if desired -->
-<!-- <img src="seminole.png" width="300" > -->
-<img src="me.jpg" width="300" >
-(After an intense hike)
-</p>
-
-<hr>
-
-
-
-<!-- I finished my PhD in 2023. I am now a research scientist at NVIDIA, working on generative modeling within the team lead by <a href="http://latentspace.cc/">Arash Vahdat</a>. -->
-
-
-
-<h1>
-About
-</h1>
-<p>
-<!-- <del>I am a final year PhD student in the <a href="https://www.cics.umass.edu">College of Information and Computer Sciences</a> at UMass Amherst. I am fortunate to be advised by Justin Domke.</del>
-<br><br>
-I finished my PhD in 2023. I am now a research scientist at NVIDIA, working on generative modeling within the <a href="https://research.nvidia.com/labs/genair/">Fundamental Generative AI Research Group</a>. -->
-I am a research scientist at NVIDIA, working on generative modeling within the <a href="https://research.nvidia.com/labs/genair/">Fundamental Generative AI Research Group</a>.
-<br><br>
-I obtained my PhD in Computer Science from UMass Amherst in 2023, supervised by Justin Domke. During my PhD I am grateful to have interned at VantAI (New York, summer 2023) with Luca Naef and Michael Bronstein; Google DeepMind (London, summer 2022) with Andriy Mnih and George Papamakarios; Microsoft Research (Cambridge UK, summer 2021) with Cheng Zhang, Emre Kiciman and Miltos Allamanis; and Amazon AWS (New York, summer 2018) with Bing Xiang and Ramesh Nallapati.
-<br><br>
-I work on probabilistic Machine Learning, focusing on generative models and sampling methods. I am interested in methodological developments as well as applications in different scientific domains.
-<!-- <br><br>
-<i>Sampling and approximate inference.</i> I worked on improving sampling and approximate inference techniques, focusing on developing methods that are faster, more robust, flexible, scalable, and overall easier to use.
-<br><br>
-<i>Generative modeling and causality.</i> I worked on developing methods for conditional generation based on compositional score modeling (applied to simulation-based inference), on causal discovery using normalizing flows and GNNs, and on multi-modal generation and representation learning using VAEs. -->
-<br><br>
-Before my PhD I also did some work on planning.
-<br><br>
-This is a <a href="https://scholar.google.com/citations?user=KIIe2K8AAAAJ&hl=en">link</a> to my google scholar, and this is a <a href="https://x.com/tomasgeffner">link</a> to my X/Twitter profile.
-</p>
-
-
-
-
-
-
-
-
-
-<!-- <h1>
-About
-</h1>
-<p>
-I am a final year PhD student in the <a href="https://www.cics.umass.edu">College of Information and Computer Sciences</a> at UMass Amherst. I am fortunate to be advised by <a href="https://people.cs.umass.edu/~domke/">Justin Domke</a>.
-<br><br>
-Most of my work during my PhD has been focused around approximate inference methods. Can we make them faster? More flexible? More robust? Easier to use? 
-<br><br>
-I'm also interested in generative models and causality. I worked with diffusion models for conditional generation during an internship at DeepMind (summer 2022), with flow-based methods and GNNs for causal discovery during an internship at MSR (summer 2021), and with VAEs for multi modal data during an internship at Amazon AWS (summer 2018).
-<br><br>
-Before my PhD I also did some work on planning.
-<br><br>
-This is a <a href="https://scholar.google.com/citations?user=KIIe2K8AAAAJ&hl=es">link</a> to my google scholar.
-</p> -->
-
-<hr>
-
-<!-- this is an h1 heading, largest-->
-<!-- <h1>
-Publications (& Preprints)
-</h1>
-<p>
-<ul style="list-style-type:square;">
-<li><a href="https://arxiv.org/abs/2407.01648">Aligning target-aware molecule diffusion models with exact energy optimization.</a> By Siyi Gu, Minkai Xu, Alexander Powers, Weili Nie, Tomas Geffner, Karsten Kreis, Jure Leskovec, Arash Vahdat, Stefano Ermon. <br>NeurIPS 2024.<br>We propose a method to finetune diffusion models on rewards</li> <br>
-<li><a href="https://arxiv.org/abs/2209.14249">Compositional Score modeling for Simulation-based Inference.</a> By Tomas Geffner, George Papamakarios and Andriy Mnih. <br>ICML 2023.<br>We introduce a novel method to do simulation-based inference (aka likelihood-free inference) using conditional score modeling. Our method learns the score of (diffused versions) of the target posterior distribution, uses annealed Langevin dynamics to get samples, and can naturally aggregate multiple observations at inference time by exploiting different factorizations of the target distribution.</li> <br>
-<li><a href="https://arxiv.org/abs/2208.07743">Langevin Diffusion Variational Inference.</a> By Tomas Geffner and Justin Domke. <br>AISTATS 2023.<br>We present a new method to combine VI and MCMC based on the discretization of Langevin diffusion processes and their time reversals. We show that our approach generalizes previously existing methods, and outperforms them on a range of inference tasks.</li> <br>
-<li><a href="https://arxiv.org/abs/2203.04432">Variational Inference with Locally Enhanced Bounds for Hierarchical Models.</a> By Tomas Geffner and Justin Domke. <br>ICML 2022 (spotlight).<br>We present a new family of variational objectives for hierarchical models, based on the application of importance weighting (and other tightening methods) at the local variables level. Our approach yields tight lower bounds and powerful posterior approximations while being compatible with subsampling, thus addressing one of the main limitations of tightening methods.</li> <br>
-<li><a href="https://arxiv.org/abs/2202.02195">Deep End-to-end Causal Inference.</a> By Tomas Geffner*, Javier Antoran*, Adam Foster*, Wenbo Gong, Chao Ma, Emre Kiciman, Amit Sharma, Angus Lamb, Martin Kukla, Nick Pawlowski, Miltadis Allamanis and Cheng Zhang. <br>Workshop on Causality for Real World Impact (NeurIPS 2022).<br>We present a new end-to-end simulation-based method for causal inference. Our approach performs causal discovery by fitting autoregressive flows, and uses the learned model to generate samples from interventional distributions and estimate treatment effects.</li> <br>
-<li><a href="https://arxiv.org/abs/2107.04150">MCMC Variational Inference via Uncorrected Hamiltonian Annealing.</a> By Tomas Geffner and Justin Domke. <br>NeurIPS 2021.<br>We present a new way of combining VI and MCMC using Annealed Importance Sampling with uncorrected HMC transitions. The method is simple to implement, and all of its parameters (even the ones from the HMC transition kernel!) can be tuned with unbiased reparameterization gradients.</li> <br>
-<li><a href="https://arxiv.org/abs/2010.09541">On the Difficulty of Unbiased Alpha Divergence Minimization.</a> By Tomas Geffner and Justin Domke. <br>ICML 2021.<br>Want to minimize an alpha divergence using unbiased gradients? It will be hard. In high dimensions your gradient estimator will likely suffer from an exponentially small SNR.</li> <br>
-<li><a href="https://arxiv.org/abs/2105.06587">Empirical Evaluation of Biased Methods for Alpha Divergence Minimization.</a> By Tomas Geffner and Justin Domke. <br>AABI 2020 (contributed talk).<br>Want to minimize an alpha divergence using biased gradients? It will be hard. In high dimensions you may end up minimizing the typical exclusive KL divergence.</li> <br>
-<li><a href="https://arxiv.org/abs/2007.14634">Approximation Based Variance Reduction for Reparameterization Gradients.</a> By Tomas Geffner and Justin Domke. <br>NeurIPS 2020.<br>We propose a new control variate to reduce the variance of gradient estimators used by VI. This leads to faster convergence. Our method works better than previously proposed methods based on Taylor expansions. We propose an explanation for this.</li> <br>
-<li><a href="https://arxiv.org/abs/1911.01894">A Rule for Gradient Estimator Selection, with an Application to Variational Inference.</a> By Tomas Geffner and Justin Domke. <br>AISTATS 2020.<br>Some gradient estimates are cheap but have a high variance. Some are expensive but have lower variance. Others are somewhere in between. Which one should you use? We study this using known SGD convergence rates and propose a simple gradient estimator selection algorithm that aims to minimize optimization wall-clock time.</li> <br>
-<li><a href="https://arxiv.org/abs/1810.12482">Using Large Ensembles of Control Variates for Variational Inference.</a> By Tomas Geffner and Justin Domke. <br>NeurIPS 2018.<br>Using a control variate may lead to a reduction in the variance of gradient estimators, improving optimization convergence. For VI, many control variates are available. We propose a method to use them jointly and show that this may work better than any of the control variates individually.</li> <br>
-<li><a href="https://arxiv.org/abs/1806.09455">Compact Policies for Fully-Observable Non-Deterministic Planning as SAT.</a> By Tomas Geffner and Hector Geffner. <br>ICAPS 2018.<br>We introduce a new SAT-based algorithm for FOND planning. The proposed method works well on several probabilistic interesting domains.</li> <br>
-<li><a href="http://giga15.ru.is/giga15-paper2.pdf">Width-based Planning for General Video-Game Playing.</a> By Tomas Geffner and Hector Geffner. <br>AAIDE 2015.<br>Developed agent for GVG-AI planning competition (real time autonomous game playing) based on a combination of planning and learning algorithms. The method got the 1st place in CEEC leg of competition (2015).</li> <br>
-</ul>
-</p> -->
-
-<!-- <h1>
-Publications (& Preprints)
-</h1>
-<p>
-<ul style="list-style-type:square;">
-<li><a href="https://arxiv.org/pdf/2410.21357">Energy-Based Diffusion Language Models for Text Generation.</a> By Minkai Xu, Tomas Geffner, Karsten Kreis, Weili Nie, Yilun Xu, Jure Leskovec, Stefano Ermon, Arash Vahdat. <br>ICLR 2025.<br>Method to improve discrete diffusions through the use of enery-based models.</li> <br>
-<li><a href="https://arxiv.org/abs/2410.14895">Truncated consistency models.</a> By Sangyun Lee, Yilun Xu, Tomas Geffner, Giulia Fanti, Karsten Kreis, Arash Vahdat, Weili Nie. <br>ICLR 2025.<br>New method to train consistency models.</li> <br>
-<li><a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4">PINDER: The protein interaction dataset and evaluation resource.</a> By Daniel Kovtun, Mehmet Akdel, Alexander Goncearenco, Guoqing Zhou, Graham Holt, David Baugher, Dejun Lin, Yusuf Adeshina, Thomas Castiglione, Xiaoyun Wang, Celine Marquet, Matt McPartlon, Tomas Geffner, Emanuele Rossi, Gabriele Corso, Hannes Stark, Zachary Carpenter, Emine Kucukbenli, Michael Bronstein, Luca Naef. <br>Biorxiv (2024).<br>New dataset for protein-protein interactions.</li> <br>
-<li><a href="https://arxiv.org/abs/2407.01648">Aligning target-aware molecule diffusion models with exact energy optimization.</a> By Siyi Gu, Minkai Xu, Alexander Powers, Weili Nie, Tomas Geffner, Karsten Kreis, Jure Leskovec, Arash Vahdat, Stefano Ermon. <br>NeurIPS 2024.<br>Finetuning diffusion models using user-specified rewards, applied to molecule generation.</li> <br>
-<li><a href="https://arxiv.org/abs/2209.14249">Compositional Score modeling for Simulation-based Inference.</a> By Tomas Geffner, George Papamakarios and Andriy Mnih. <br>ICML 2023.<br>Novel approach to compose diffusion models, applied to simulation-based inference.</li> <br>
-<li><a href="https://arxiv.org/abs/2208.07743">Langevin Diffusion Variational Inference.</a> By Tomas Geffner and Justin Domke. <br>AISTATS 2023.<br>New method to combine variational inference and MCMC based on the discretization of Langevin diffusion processes and their time reversals.</li> <br>
-<li><a href="https://arxiv.org/abs/2203.04432">Variational Inference with Locally Enhanced Bounds for Hierarchical Models.</a> By Tomas Geffner and Justin Domke. <br>ICML 2022 (spotlight).<br>New family of variational objectives for hierarchical models, based on the application of importance weighting (and other tightening methods) at the local variables level.</li> <br>
-<li><a href="https://arxiv.org/abs/2202.02195">Deep End-to-end Causal Inference.</a> By Tomas Geffner*, Javier Antoran*, Adam Foster*, Wenbo Gong, Chao Ma, Emre Kiciman, Amit Sharma, Angus Lamb, Martin Kukla, Nick Pawlowski, Miltadis Allamanis and Cheng Zhang. <br>TMLR.<br>We present a new end-to-end simulation-based method for causal inference, based on Bayesian causal discovery, autoregressive flows, and Monte Carlo estimation for treatment effect estimation.</li> <br>
-<li><a href="https://arxiv.org/abs/2107.04150">MCMC Variational Inference via Uncorrected Hamiltonian Annealing.</a> By Tomas Geffner and Justin Domke. <br>NeurIPS 2021.<br>Novel method to compbine variatinal inference and MCMC using Annealed Importance Sampling with uncorrected HMC transitions.</li> <br>
-<li><a href="https://arxiv.org/abs/2010.09541">On the Difficulty of Unbiased Alpha Divergence Minimization.</a> By Tomas Geffner and Justin Domke. <br>ICML 2021.<br>Theoretical analysis of methods based on unbiased gradient estimators to minimize alpha divergences. Main conclusion: In (moderately) high dimensions your gradient estimator will likely suffer from an exponentially small SNR.</li> <br>
-<li><a href="https://arxiv.org/abs/2105.06587">Empirical Evaluation of Biased Methods for Alpha Divergence Minimization.</a> By Tomas Geffner and Justin Domke. <br>AABI 2020 (contributed talk).<br>Thorough and illustrative empirical evaluation of multiple methods based on biased gradient estimators to minimize alpha divergences. Main conclusion: In (moderately) high dimensions you may end up minimizing the typical exclusive KL divergence.</li> <br>
-<li><a href="https://arxiv.org/abs/2007.14634">Approximation Based Variance Reduction for Reparameterization Gradients.</a> By Tomas Geffner and Justin Domke. <br>NeurIPS 2020.<br>Improved gradient estimation in variaional inference through a novel control variate.</li> <br>
-<li><a href="https://arxiv.org/abs/1911.01894">A Rule for Gradient Estimator Selection, with an Application to Variational Inference.</a> By Tomas Geffner and Justin Domke. <br>AISTATS 2020.<br>We propose a method to balance gradient cost and variance to maximize optimization speed.</li> <br>
-<li><a href="https://arxiv.org/abs/1810.12482">Using Large Ensembles of Control Variates for Variational Inference.</a> By Tomas Geffner and Justin Domke. <br>NeurIPS 2018.<br>We propose improved gradient estimation for variational inference through the use of multiple control variates in concert.</li> <br>
-<li><a href="https://arxiv.org/abs/1806.09455">Compact Policies for Fully-Observable Non-Deterministic Planning as SAT.</a> By Tomas Geffner and Hector Geffner. <br>ICAPS 2018.<br>New SAT-based algorithm for FOND planning.</li> <br>
-<li><a href="http://giga15.ru.is/giga15-paper2.pdf">Width-based Planning for General Video-Game Playing.</a> By Tomas Geffner and Hector Geffner. <br>AAIDE 2015.<br>Agent for GVG-AI planning competition (real time autonomous game playing) based on a combination of planning and learning algorithms..</li> <br>
-</ul>
-</p> -->
-
-<!-- <h1>
-Publications (& Preprints)
-</h1>
-<p>
-<ul style="list-style-type:square;">
-<li><a href="https://arxiv.org/pdf/2410.21357">Energy-Based Diffusion Language Models for Text Generation.</a> By Minkai Xu, <u>Tomas Geffner</u>, Karsten Kreis, Weili Nie, Yilun Xu, Jure Leskovec, Stefano Ermon, Arash Vahdat. <br>ICLR 2025.</li> <br>
-<li><a href="https://arxiv.org/abs/2410.14895">Truncated Consistency Models.</a> By Sangyun Lee, Yilun Xu, <u>Tomas Geffner</u>, Giulia Fanti, Karsten Kreis, Arash Vahdat, Weili Nie. <br>ICLR 2025.</li> <br>
-<li><a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4">PINDER: The protein interaction dataset and evaluation resource.</a> By Daniel Kovtun, Mehmet Akdel, Alexander Goncearenco, Guoqing Zhou, Graham Holt, David Baugher, Dejun Lin, Yusuf Adeshina, Thomas Castiglione, Xiaoyun Wang, Celine Marquet, Matt McPartlon, <u>Tomas Geffner</u>, Emanuele Rossi, Gabriele Corso, Hannes Stark, Zachary Carpenter, Emine Kucukbenli, Michael Bronstein, Luca Naef. <br>Biorxiv (2024).</li> <br>
-<li><a href="https://arxiv.org/abs/2407.01648">Aligning Target-Aware Molecule Diffusion Models with Exact Energy Optimization.</a> By Siyi Gu, Minkai Xu, Alexander Powers, Weili Nie, <u>Tomas Geffner</u>, Karsten Kreis, Jure Leskovec, Arash Vahdat, Stefano Ermon. <br>NeurIPS 2024.</li> <br>
-<li><a href="https://arxiv.org/abs/2209.14249">Compositional Score modeling for Simulation-based Inference.</a> By <u>Tomas Geffner</u>, George Papamakarios and Andriy Mnih. <br>ICML 2023.</li> <br>
-<li><a href="https://arxiv.org/abs/2208.07743">Langevin Diffusion Variational Inference.</a> By <u>Tomas Geffner</u> and Justin Domke. <br>AISTATS 2023.</li> <br>
-<li><a href="https://arxiv.org/abs/2203.04432">Variational Inference with Locally Enhanced Bounds for Hierarchical Models.</a> By <u>Tomas Geffner</u> and Justin Domke. <br>ICML 2022 (spotlight).</li> <br>
-<li><a href="https://arxiv.org/abs/2202.02195">Deep End-to-end Causal Inference.</a> By <u>Tomas Geffner</u>*, Javier Antoran*, Adam Foster*, Wenbo Gong, Chao Ma, Emre Kiciman, Amit Sharma, Angus Lamb, Martin Kukla, Nick Pawlowski, Miltadis Allamanis and Cheng Zhang. <br>TMLR.</li> <br>
-<li><a href="https://arxiv.org/abs/2107.04150">MCMC Variational Inference via Uncorrected Hamiltonian Annealing.</a> By <u>Tomas Geffner</u> and Justin Domke. <br>NeurIPS 2021.</li> <br>
-<li><a href="https://arxiv.org/abs/2010.09541">On the Difficulty of Unbiased Alpha Divergence Minimization.</a> By <u>Tomas Geffner</u> and Justin Domke. <br>ICML 2021.</li> <br>
-<li><a href="https://arxiv.org/abs/2105.06587">Empirical Evaluation of Biased Methods for Alpha Divergence Minimization.</a> By <u>Tomas Geffner</u> and Justin Domke. <br>AABI 2020 (contributed talk).</li> <br>
-<li><a href="https://arxiv.org/abs/2007.14634">Approximation Based Variance Reduction for Reparameterization Gradients.</a> By <u>Tomas Geffner</u> and Justin Domke. <br>NeurIPS 2020.</li> <br>
-<li><a href="https://arxiv.org/abs/1911.01894">A Rule for Gradient Estimator Selection, with an Application to Variational Inference.</a> By <u>Tomas Geffner</u> and Justin Domke. <br>AISTATS 2020.</li> <br>
-<li><a href="https://arxiv.org/abs/1810.12482">Using Large Ensembles of Control Variates for Variational Inference.</a> By <u>Tomas Geffner</u> and Justin Domke. <br>NeurIPS 2018.</li> <br>
-<li><a href="https://arxiv.org/abs/1806.09455">Compact Policies for Fully-Observable Non-Deterministic Planning as SAT.</a> By <u>Tomas Geffner</u> and Hector Geffner. <br>ICAPS 2018.</li> <br>
-<li><a href="http://giga15.ru.is/giga15-paper2.pdf">Width-based Planning for General Video-Game Playing.</a> By <u>Tomas Geffner</u> and Hector Geffner. <br>AAIDE 2015.</li> <br>
-</ul>
-</p> -->
-
-<h1>
-Publications (& Preprints)
-</h1>
-<p>
-<ul style="list-style-type:square;">
-<li><a href="https://rfd4-proteina.org/assets/paper/RFD4-Proteina.pdf">Biomolecular design through latent reasoning with RFD4-Proteina.</a><br>By Nathaniel Corley*, Kieran Didi*, Maxwell W. Kazman*, Rafael I. Brent*, ..., <u>Tomas Geffner</u>, ..., Anthony P. Green, Arash Vahdat, David Baker. <br>Preprint (2026).</li> <br>
-<li><a href="https://arxiv.org/abs/2610.02665">Large Language Continuous Diffusion Models.</a><br>By Zhihan Yang, Wei Guo, Jean-Marie Lemercier, Simon Welker, Yonggan Fu, Mohammad Mahdi Kamani, Sajad Norouzi, Julius Berner, <u>Tomas Geffner</u>, Karsten Kreis, Yongxin Chen, Molei Tao, John Thickstun, Pavlo Molchanov, Ante Juki&#263;, Arash Vahdat, Morteza Mardani. <br>arXiv (2026).</li> <br>
-<li><a href="https://doi.org/10.64898/2026.09.12.751118">Latent Generative Search Unlocks De Novo Design of Untapped Biomolecular Interactions at Scale.</a><br>By Kieran Didi*, Danny Reidenbach*, Matthew Penner, Supriya Ravichandran, ..., <u>Tomas Geffner</u>, ..., Arash Vahdat, Pierce Ogden, Karsten Kreis. <br>bioRxiv (2026).</li> <br>
-<li><a href="https://arxiv.org/abs/2605.23605">DiLaDiff: Distilled Latent-Augmented Diffusion for Language Modeling.</a><br>By Jean-Marie Lemercier, <u>Tomas Geffner</u>, Karsten Kreis, Morteza Mardani, Arash Vahdat, Ante Juki&#263;. <br>arXiv (2026).</li> <br>
-<li><a href="https://arxiv.org/abs/2603.27950">Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute.</a><br>By Kieran Didi*, Zuobai Zhang*, Guoqing Zhou*, Danny Reidenbach*, Zhonglin Cao*, Sooyoung Cha*, <u>Tomas Geffner</u>, Christian Dallago, Jian Tang, Michael M. Bronstein, Martin Steinegger, Emine Kucukbenli, Arash Vahdat, Karsten Kreis. <br>ICLR 2026 (<b>oral, top 1.1%</b>).</li> <br>
-<li><a href="https://arxiv.org/abs/2507.09466">La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching.</a><br>By <u>Tomas Geffner</u>*,  Kieran Didi*, Zhonglin Cao, Danny Reidenbach, Zuobai Zhang, Christian Dallago, Emine Kucukbenli, Karsten Kreis^, Arash Vahdat^. <br>ICLR 2026 (<b>top 0.01% by average reviewer score</b>).</li> <br>
-<li><a href="https://arxiv.org/abs/2602.07189">Latent Target Score Matching, with an Application to Simulation-Based Inference.</a><br>By Joohwan Ko, <u>Tomas Geffner</u>. <br>Machine Learning and the Physical Sciences Workshop (NeurIPS 2025).</li> <br>
-<li><a href="https://arxiv.org/abs/2512.01976">Consistent Synthetic Sequences Unlock Structural Diversity in Fully Atomistic De Novo Protein Design.</a><br>By Danny Reidenbach, Zhonglin Cao, Zuobai Zhang, Kieran Didi, <u>Tomas Geffner</u>, Guoqing Zhou, Jian Tang, Christian Dallago, Arash Vahdat, Emine Kucukbenli, Karsten Kreis. <br>AI4Science Workshop (NeurIPS 2025).</li> <br>
-<li><a href="https://arxiv.org/abs/2503.20719">Learning Straight Flows by Learning Curved Interpolants.</a><br>By Shiv Shankar, <u>Tomas Geffner</u>. <br>DELTA Workshop (ICLR 2025).</li> <br>
-<li><a href="https://openreview.net/pdf?id=6uPcJtMgWN">Efficient Molecular Conformer Generation with SO(3)-Averaged Flow Matching and Reflow.</a><br>By Zhonglin Cao, Mario Geiger, Allan Dos Santos Costa, Danny Reidenbach, Karsten Kreis, <u>Tomas Geffner</u>, Franco Pellegrini, Guoqing Zhou, Emine Kucukbenli. <br>ICML (2025).</li> <br>
-<li><a href="https://arxiv.org/abs/2410.19814">Adaptive Flow Matching for Resolving Small-Scale Physics.</a><br>By Stathi Fotiadis, Noah Brenowits, <u>Tomas Geffner</u>, Yair Cohen, Michael Pritchard, Arash Vahdat, Morteza Mardani. <br>ICML (2025).</li> <br>
-<li><a href="https://openreview.net/pdf?id=TVQLu34bdw">Proteina: Scaling Flow-based Protein Structure Generative Models.</a><br>By <u>Tomas Geffner</u>*, Kieran Didi*, Zuobai Zhang*, Danny Reidenbach, Zhonglin Cao, Jason Yim, Mario Geiger, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Karsten Kreis*. <br>ICLR 2025 (<b>oral, top 1.8%</b>).</li> <br>
-<li><a href="https://openreview.net/pdf?id=0ctvBgKFgc">ProtComposer: Compositional Protein Structure Generation with 3D Ellipsoids.</a><br>By Hannes Stark*, Bowen Jing*, <u>Tomas Geffner</u>, Jason Yim, Tommi Jaakola, Arash Vahdat, Karsten Kreis. <br>ICLR 2025 (<b>oral, top 1.8%</b>).</li> <br>
-<li><a href="https://arxiv.org/pdf/2410.21357">Energy-Based Diffusion Language Models for Text Generation.</a><br>By Minkai Xu, <u>Tomas Geffner</u>, Karsten Kreis, Weili Nie, Yilun Xu, Jure Leskovec, Stefano Ermon, Arash Vahdat. <br>ICLR 2025.</li> <br>
-<li><a href="https://arxiv.org/abs/2410.14895">Truncated Consistency Models.</a><br>By Sangyun Lee, Yilun Xu, <u>Tomas Geffner</u>, Giulia Fanti, Karsten Kreis, Arash Vahdat, Weili Nie. <br>ICLR 2025.</li> <br>
-<li><a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4">PINDER: The protein interaction dataset and evaluation resource.</a><br>By Daniel Kovtun, Mehmet Akdel, Alexander Goncearenco, Guoqing Zhou, Graham Holt, David Baugher, Dejun Lin, Yusuf Adeshina, Thomas Castiglione, Xiaoyun Wang, Celine Marquet, Matt McPartlon, <u>Tomas Geffner</u>, Emanuele Rossi, Gabriele Corso, Hannes Stark, Zachary Carpenter, Emine Kucukbenli, Michael Bronstein, Luca Naef. <br>Biorxiv (2024).</li> <br>
-<li><a href="https://arxiv.org/abs/2407.01648">Aligning Target-Aware Molecule Diffusion Models with Exact Energy Optimization.</a><br>By Siyi Gu, Minkai Xu, Alexander Powers, Weili Nie, <u>Tomas Geffner</u>, Karsten Kreis, Jure Leskovec, Arash Vahdat, Stefano Ermon. <br>NeurIPS 2024.</li> <br>
-<li><a href="https://proceedings.mlr.press/v238/wang24c.html">Joint Control Variate for Faster Black-Box Variational Inference.</a><br>By Xi Wang, <u>Tomas Geffner</u>, Justin Domke. <br>AISTATS 2024.</li> <br>
-<li><a href="https://openreview.net/forum?id=e6sqttxEGX">Deep End-to-end Causal Inference.</a><br>By <u>Tomas Geffner</u>*, Javier Antoran*, Adam Foster*, Wenbo Gong, Chao Ma, Emre Kiciman, Amit Sharma, Angus Lamb, Martin Kukla, Nick Pawlowski, Agrin Hilmkil, Joel Jennings, Meyer Scetbon, Miltiadis Allamanis and Cheng Zhang. <br>TMLR 2024.</li> <br>
-<li><a href="https://www.mlsb.io/papers_2023/LatentDock_Protein-Protein_Docking_with_Latent_Diffusion.pdf">LatentDock: Protein-Protein Docking with Latent Diffusion.</a><br>By Matt McPartlon, Celine Marquet, <u>Tomas Geffner</u>, Daniel Kovtun, Alexander Goncearenco, Zachary Carpenter, Luca Naef, Michael Bronstein, Jinbo Xu. <br>Machine Learning for Structural Biology Workshop (NeurIPS 2023).</li> <br>
-<li><a href="https://openreview.net/pdf?id=PQa3giMLZp">Bending and Binding: Predicting Protein Flexibility upon Ligand Interaction using Diffusion Models.</a><br>By Xuejin Zhang, <u>Tomas Geffner</u>, Matt McPartlon, Mehmet Akdel, Dylan Abramson, Graham Holt, Alexander Goncearenco, Luca Naef, Michael Bronstein. <br>Generative AI and Biology Workshop (NeurIPS 2023).</li> <br>
-<li><a href="https://arxiv.org/abs/2209.14249">Compositional Score modeling for Simulation-based Inference.</a><br>By <u>Tomas Geffner</u>, George Papamakarios and Andriy Mnih. <br>ICML 2023.</li> <br>
-<li><a href="https://arxiv.org/abs/2208.07743">Langevin Diffusion Variational Inference.</a><br>By <u>Tomas Geffner</u> and Justin Domke. <br>AISTATS 2023.</li> <br>
-<li><a href="https://arxiv.org/abs/2203.04432">Variational Inference with Locally Enhanced Bounds for Hierarchical Models.</a><br>By <u>Tomas Geffner</u> and Justin Domke. <br>ICML 2022 (spotlight).</li> <br>
-<li><a href="https://arxiv.org/abs/2107.04150">MCMC Variational Inference via Uncorrected Hamiltonian Annealing.</a><br>By <u>Tomas Geffner</u> and Justin Domke. <br>NeurIPS 2021.</li> <br>
-<li><a href="https://arxiv.org/abs/2010.09541">On the Difficulty of Unbiased Alpha Divergence Minimization.</a><br>By <u>Tomas Geffner</u> and Justin Domke. <br>ICML 2021.</li> <br>
-<li><a href="https://arxiv.org/abs/2105.06587">Empirical Evaluation of Biased Methods for Alpha Divergence Minimization.</a><br>By <u>Tomas Geffner</u> and Justin Domke. <br>AABI 2020 (contributed talk).</li> <br>
-<li><a href="https://arxiv.org/abs/2007.14634">Approximation Based Variance Reduction for Reparameterization Gradients.</a><br>By <u>Tomas Geffner</u> and Justin Domke. <br>NeurIPS 2020.</li> <br>
-<li><a href="https://arxiv.org/abs/1911.01894">A Rule for Gradient Estimator Selection, with an Application to Variational Inference.</a><br>By <u>Tomas Geffner</u> and Justin Domke. <br>AISTATS 2020.</li> <br>
-<li><a href="https://arxiv.org/abs/1810.12482">Using Large Ensembles of Control Variates for Variational Inference.</a><br>By <u>Tomas Geffner</u> and Justin Domke. <br>NeurIPS 2018.</li> <br>
-<li><a href="https://arxiv.org/abs/1806.09455">Compact Policies for Fully-Observable Non-Deterministic Planning as SAT.</a><br>By <u>Tomas Geffner</u> and Hector Geffner. <br>ICAPS 2018.</li> <br>
-<li><a href="http://giga15.ru.is/giga15-paper2.pdf">Width-based Planning for General Video-Game Playing.</a><br>By <u>Tomas Geffner</u> and Hector Geffner. <br>AAIDE 2015.</li> <br>
-</ul>
-</p>
-
-<!-- <hr> -->
-
-<!-- 
-<h1>
-Other interesting projects	
-</h1>
-<p>
-<ul style="list-style-type:square;">
-<li>Bayesian Modeling to Infer User Preferences. We use a hierarchical probabilistic model to automatically infer users' preferences. The proposed model allows parameter sharing between users and the incorporation of domain knowledge.</li> <br>
-<li><a href="https://arxiv.org/abs/2105.06587">Empirical Evaluation of Biased Methods for Alpha Divergence Minimization.</a> By Tomas Geffner and Justin Domke. <br>AABI 2020 (contributed talk).<br>Want to minimize an alpha divergence using biased gradients? It will be hard. In high dimensions you may end up minimizing the typical exclusive KL divergence.</li> <br>
-<li><a href="https://arxiv.org/abs/2010.09541">On the Difficulty of Unbiased Alpha Divergence Minimization.</a> By Tomas Geffner and Justin Domke. <br>ICML 2021.<br>Want to minimize an alpha divergence using unbiased gradients? It will be hard. In high dimensions your gradient estimator will likely suffer from an exponentially small SNR.</li> <br>
-</p>
- -->
-
-<hr>
-
-<h1>
-Service
-</h1>
-Organizing Committee:
-<ul style="list-style-type:none;">
-<li>Publication chair (AISTATS 2023)</li>
-</ul>
-<br>
-Conference reviewing:
-<ul style="list-style-type:none;">
-<li>NeurIPS (2019, 2020, 2021, 2022, 2025, 2026)</li>
-<li>ICML (2020, 2025, 2026)</li>
-<li>ICLR (2021, 2022, 2025, 2026, 2027)</li>
-<li>AISTATS (2021)</li>
-</ul>
-<br>
-Journal reviewing:
-<ul style="list-style-type:none;">
-<li>JMLR</li>
-<li>TMLR</li>
-</ul>
-
-<!-- <hr>
-
-<h1>
-Honors and Awards
-</h1>
-<ul style="list-style-type:circle;">
-<li>Winner of the 97th annual FSU Math Competition</li>
-<li>Received a teaching award for best TA for the Spring 2018 semester.</li>
-<li>Recipient of the FSU Fellowship award.</li>
-</ul> -->
-
-<hr>
-
-<!-- <h1>
-Teaching experience
-</h1>
-I was a TA for several courses:
-<ul style="list-style-type:none;">
-<li>Probabilistic graphical models. Office hours and prepared course notes.</li>
-<li>Machine learning. Prepared homeworks and exams.</li>
-<li>Introduction to data structures. Office hours, discussion sessions, prepared and graded homeworks.</li>
-<li>Introduction to Natural language processing. Office hours and grading.</li>
-<li>Human Computer Interaction. Mostly grading.</li>
-</ul>
-
-<hr> -->
-
-<h1>
-Teaching experience
-</h1>
-I was a teaching assistant for several courses:
-<ul style="list-style-type:none;">
-<li>Probabilistic graphical models.</li>
-<li>Machine learning.</li>
-<li>Introduction to data structures.</li>
-<li>Introduction to Natural language processing.</li>
-<li>Human Computer Interaction.</li>
-</ul>
-
-<hr>
-
-<h1>
-Other
-</h1>
-<p>
-I try to play tennis.
-</p>
-</p>
-
-<hr>
-
-<h1>
-Contact
-</h1>
-<table>
-<!-- <tr><td><bold>Email:</bold> t[lastname]@cs.umass.edu</td> </tr> -->
-<tr><td><bold>Email:</bold> t[lastname]@nvidia.com</td> </tr>
-<tr><td><bold>Email:</bold> [firstname][lastname]@gmail.com</td> </tr>
-</tr>
-</table>
-
-<hr>
-
-<h1>
-Disclaimer
-</h1>
-<p>
-The template for this website was obtained from <a href="https://www.math.fsu.edu/Computer/personal-webpage-templates/">here.</a>
-</p>
-</p>
+<body id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page"><header class="topbar"><nav class="site-nav" aria-label="Main navigation"><a href="#publications">Publications</a><a href="#about">About</a><a href="#service">Service</a></nav></header><main id="main"><section class="hero" aria-labelledby="name"><div><h1 id="name">Tomas Geffner</h1><p class="role">I am a senior research scientist at NVIDIA, working on generative modeling within the <a href="https://research.nvidia.com/labs/genair/">Fundamental Generative AI Research Group</a>.</p><p class="research">I work on probabilistic machine learning, focusing on generative models and sampling methods. I am interested in methodological developments as well as applications in different scientific domains.</p><div class="profile-links"><a href="https://scholar.google.com/citations?user=KIIe2K8AAAAJ&amp;hl=en">Google Scholar <span aria-hidden="true">↗</span></a><a href="https://x.com/tomasgeffner">X / Twitter <span aria-hidden="true">↗</span></a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></div></div><figure class="portrait"><img src="me.jpg" alt="Tomas Geffner on a mountain hike beside an ibex statue" width="2001" height="2419"><figcaption>After an intense hike.</figcaption></figure></section>
+<section class="section publications" id="publications" aria-labelledby="publications-heading"><div class="section-heading"><h2 id="publications-heading">Publications</h2></div><section class="year-group" id="year-2026" aria-labelledby="heading-2026" data-year="2026"><h3 class="year-heading" id="heading-2026">2026</h3><ul class="paper-list"><li class="paper"><article>
+<h3 class="paper-title"><a href="https://rfd4-proteina.org/assets/paper/RFD4-Proteina.pdf">Biomolecular design through latent reasoning with RFD4-Proteina</a></h3>
+<p class="authors">Nathaniel Corley*, Kieran Didi*, Maxwell W. Kazman*, Rafael I. Brent*, ..., <u>Tomas Geffner</u>, ..., Anthony P. Green, Arash Vahdat, David Baker.</p>
+<p class="venue">Preprint (2026)</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/2610.02665">Large Language Continuous Diffusion Models</a></h3>
+<p class="authors">Zhihan Yang, Wei Guo, Jean-Marie Lemercier, Simon Welker, Yonggan Fu, Mohammad Mahdi Kamani, Sajad Norouzi, Julius Berner, <u>Tomas Geffner</u>, Karsten Kreis, Yongxin Chen, Molei Tao, John Thickstun, Pavlo Molchanov, Ante Juki&#263;, Arash Vahdat, Morteza Mardani.</p>
+<p class="venue">arXiv (2026)</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://doi.org/10.64898/2026.09.12.751118">Latent Generative Search Unlocks De Novo Design of Untapped Biomolecular Interactions at Scale</a></h3>
+<p class="authors">Kieran Didi*, Danny Reidenbach*, Matthew Penner, Supriya Ravichandran, ..., <u>Tomas Geffner</u>, ..., Arash Vahdat, Pierce Ogden, Karsten Kreis.</p>
+<p class="venue">bioRxiv (2026)</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/2605.23605">DiLaDiff: Distilled Latent-Augmented Diffusion for Language Modeling</a></h3>
+<p class="authors">Jean-Marie Lemercier, <u>Tomas Geffner</u>, Karsten Kreis, Morteza Mardani, Arash Vahdat, Ante Juki&#263;.</p>
+<p class="venue">arXiv (2026)</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/2603.27950">Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute</a></h3>
+<p class="authors">Kieran Didi*, Zuobai Zhang*, Guoqing Zhou*, Danny Reidenbach*, Zhonglin Cao*, Sooyoung Cha*, <u>Tomas Geffner</u>, Christian Dallago, Jian Tang, Michael M. Bronstein, Martin Steinegger, Emine Kucukbenli, Arash Vahdat, Karsten Kreis.</p>
+<p class="venue">ICLR 2026 (<strong>oral, top 1.1%</strong>)</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/2507.09466">La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching</a></h3>
+<p class="authors"><u>Tomas Geffner</u>*,  Kieran Didi*, Zhonglin Cao, Danny Reidenbach, Zuobai Zhang, Christian Dallago, Emine Kucukbenli, Karsten Kreis^, Arash Vahdat^.</p>
+<p class="venue">ICLR 2026 (<strong>top 0.01% by average reviewer score</strong>)</p>
+</article></li></ul></section>
+<section class="year-group" id="year-2025" aria-labelledby="heading-2025" data-year="2025"><h3 class="year-heading" id="heading-2025">2025</h3><ul class="paper-list"><li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/2602.07189">Latent Target Score Matching, with an Application to Simulation-Based Inference</a></h3>
+<p class="authors">Joohwan Ko, <u>Tomas Geffner</u>.</p>
+<p class="venue">Machine Learning and the Physical Sciences Workshop (NeurIPS 2025)</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/2512.01976">Consistent Synthetic Sequences Unlock Structural Diversity in Fully Atomistic De Novo Protein Design</a></h3>
+<p class="authors">Danny Reidenbach, Zhonglin Cao, Zuobai Zhang, Kieran Didi, <u>Tomas Geffner</u>, Guoqing Zhou, Jian Tang, Christian Dallago, Arash Vahdat, Emine Kucukbenli, Karsten Kreis.</p>
+<p class="venue">AI4Science Workshop (NeurIPS 2025)</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/2503.20719">Learning Straight Flows by Learning Curved Interpolants</a></h3>
+<p class="authors">Shiv Shankar, <u>Tomas Geffner</u>.</p>
+<p class="venue">DELTA Workshop (ICLR 2025)</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://openreview.net/pdf?id=6uPcJtMgWN">Efficient Molecular Conformer Generation with SO(3)-Averaged Flow Matching and Reflow</a></h3>
+<p class="authors">Zhonglin Cao, Mario Geiger, Allan Dos Santos Costa, Danny Reidenbach, Karsten Kreis, <u>Tomas Geffner</u>, Franco Pellegrini, Guoqing Zhou, Emine Kucukbenli.</p>
+<p class="venue">ICML (2025)</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/2410.19814">Adaptive Flow Matching for Resolving Small-Scale Physics</a></h3>
+<p class="authors">Stathi Fotiadis, Noah Brenowits, <u>Tomas Geffner</u>, Yair Cohen, Michael Pritchard, Arash Vahdat, Morteza Mardani.</p>
+<p class="venue">ICML (2025)</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://openreview.net/pdf?id=TVQLu34bdw">Proteina: Scaling Flow-based Protein Structure Generative Models</a></h3>
+<p class="authors"><u>Tomas Geffner</u>*, Kieran Didi*, Zuobai Zhang*, Danny Reidenbach, Zhonglin Cao, Jason Yim, Mario Geiger, Christian Dallago, Emine Kucukbenli, Arash Vahdat, Karsten Kreis*.</p>
+<p class="venue">ICLR 2025 (<strong>oral, top 1.8%</strong>)</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://openreview.net/pdf?id=0ctvBgKFgc">ProtComposer: Compositional Protein Structure Generation with 3D Ellipsoids</a></h3>
+<p class="authors">Hannes Stark*, Bowen Jing*, <u>Tomas Geffner</u>, Jason Yim, Tommi Jaakola, Arash Vahdat, Karsten Kreis.</p>
+<p class="venue">ICLR 2025 (<strong>oral, top 1.8%</strong>)</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/pdf/2410.21357">Energy-Based Diffusion Language Models for Text Generation</a></h3>
+<p class="authors">Minkai Xu, <u>Tomas Geffner</u>, Karsten Kreis, Weili Nie, Yilun Xu, Jure Leskovec, Stefano Ermon, Arash Vahdat.</p>
+<p class="venue">ICLR 2025</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/2410.14895">Truncated Consistency Models</a></h3>
+<p class="authors">Sangyun Lee, Yilun Xu, <u>Tomas Geffner</u>, Giulia Fanti, Karsten Kreis, Arash Vahdat, Weili Nie.</p>
+<p class="venue">ICLR 2025</p>
+</article></li></ul></section>
+<section class="year-group" id="year-2024" aria-labelledby="heading-2024" data-year="2024"><h3 class="year-heading" id="heading-2024">2024</h3><ul class="paper-list"><li class="paper"><article>
+<h3 class="paper-title"><a href="https://www.biorxiv.org/content/10.1101/2024.07.17.603980v4">PINDER: The protein interaction dataset and evaluation resource</a></h3>
+<p class="authors">Daniel Kovtun, Mehmet Akdel, Alexander Goncearenco, Guoqing Zhou, Graham Holt, David Baugher, Dejun Lin, Yusuf Adeshina, Thomas Castiglione, Xiaoyun Wang, Celine Marquet, Matt McPartlon, <u>Tomas Geffner</u>, Emanuele Rossi, Gabriele Corso, Hannes Stark, Zachary Carpenter, Emine Kucukbenli, Michael Bronstein, Luca Naef.</p>
+<p class="venue">Biorxiv (2024)</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/2407.01648">Aligning Target-Aware Molecule Diffusion Models with Exact Energy Optimization</a></h3>
+<p class="authors">Siyi Gu, Minkai Xu, Alexander Powers, Weili Nie, <u>Tomas Geffner</u>, Karsten Kreis, Jure Leskovec, Arash Vahdat, Stefano Ermon.</p>
+<p class="venue">NeurIPS 2024</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://proceedings.mlr.press/v238/wang24c.html">Joint Control Variate for Faster Black-Box Variational Inference</a></h3>
+<p class="authors">Xi Wang, <u>Tomas Geffner</u>, Justin Domke.</p>
+<p class="venue">AISTATS 2024</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://openreview.net/forum?id=e6sqttxEGX">Deep End-to-end Causal Inference</a></h3>
+<p class="authors"><u>Tomas Geffner</u>*, Javier Antoran*, Adam Foster*, Wenbo Gong, Chao Ma, Emre Kiciman, Amit Sharma, Angus Lamb, Martin Kukla, Nick Pawlowski, Agrin Hilmkil, Joel Jennings, Meyer Scetbon, Miltiadis Allamanis and Cheng Zhang.</p>
+<p class="venue">TMLR 2024</p>
+</article></li></ul></section>
+<section class="year-group" id="year-2023" aria-labelledby="heading-2023" data-year="2023"><h3 class="year-heading" id="heading-2023">2023</h3><ul class="paper-list"><li class="paper"><article>
+<h3 class="paper-title"><a href="https://www.mlsb.io/papers_2023/LatentDock_Protein-Protein_Docking_with_Latent_Diffusion.pdf">LatentDock: Protein-Protein Docking with Latent Diffusion</a></h3>
+<p class="authors">Matt McPartlon, Celine Marquet, <u>Tomas Geffner</u>, Daniel Kovtun, Alexander Goncearenco, Zachary Carpenter, Luca Naef, Michael Bronstein, Jinbo Xu.</p>
+<p class="venue">Machine Learning for Structural Biology Workshop (NeurIPS 2023)</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://openreview.net/pdf?id=PQa3giMLZp">Bending and Binding: Predicting Protein Flexibility upon Ligand Interaction using Diffusion Models</a></h3>
+<p class="authors">Xuejin Zhang, <u>Tomas Geffner</u>, Matt McPartlon, Mehmet Akdel, Dylan Abramson, Graham Holt, Alexander Goncearenco, Luca Naef, Michael Bronstein.</p>
+<p class="venue">Generative AI and Biology Workshop (NeurIPS 2023)</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/2209.14249">Compositional Score modeling for Simulation-based Inference</a></h3>
+<p class="authors"><u>Tomas Geffner</u>, George Papamakarios and Andriy Mnih.</p>
+<p class="venue">ICML 2023</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/2208.07743">Langevin Diffusion Variational Inference</a></h3>
+<p class="authors"><u>Tomas Geffner</u> and Justin Domke.</p>
+<p class="venue">AISTATS 2023</p>
+</article></li></ul></section>
+<section class="year-group" id="year-2022" aria-labelledby="heading-2022" data-year="2022"><h3 class="year-heading" id="heading-2022">2022</h3><ul class="paper-list"><li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/2203.04432">Variational Inference with Locally Enhanced Bounds for Hierarchical Models</a></h3>
+<p class="authors"><u>Tomas Geffner</u> and Justin Domke.</p>
+<p class="venue">ICML 2022 (spotlight)</p>
+</article></li></ul></section>
+<section class="year-group" id="year-2021" aria-labelledby="heading-2021" data-year="2021"><h3 class="year-heading" id="heading-2021">2021</h3><ul class="paper-list"><li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/2107.04150">MCMC Variational Inference via Uncorrected Hamiltonian Annealing</a></h3>
+<p class="authors"><u>Tomas Geffner</u> and Justin Domke.</p>
+<p class="venue">NeurIPS 2021</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/2010.09541">On the Difficulty of Unbiased Alpha Divergence Minimization</a></h3>
+<p class="authors"><u>Tomas Geffner</u> and Justin Domke.</p>
+<p class="venue">ICML 2021</p>
+</article></li></ul></section>
+<section class="year-group" id="year-2020" aria-labelledby="heading-2020" data-year="2020"><h3 class="year-heading" id="heading-2020">2020</h3><ul class="paper-list"><li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/2105.06587">Empirical Evaluation of Biased Methods for Alpha Divergence Minimization</a></h3>
+<p class="authors"><u>Tomas Geffner</u> and Justin Domke.</p>
+<p class="venue">AABI 2020 (contributed talk)</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/2007.14634">Approximation Based Variance Reduction for Reparameterization Gradients</a></h3>
+<p class="authors"><u>Tomas Geffner</u> and Justin Domke.</p>
+<p class="venue">NeurIPS 2020</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/1911.01894">A Rule for Gradient Estimator Selection, with an Application to Variational Inference</a></h3>
+<p class="authors"><u>Tomas Geffner</u> and Justin Domke.</p>
+<p class="venue">AISTATS 2020</p>
+</article></li></ul></section>
+<section class="year-group" id="year-2018" aria-labelledby="heading-2018" data-year="2018"><h3 class="year-heading" id="heading-2018">2018</h3><ul class="paper-list"><li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/1810.12482">Using Large Ensembles of Control Variates for Variational Inference</a></h3>
+<p class="authors"><u>Tomas Geffner</u> and Justin Domke.</p>
+<p class="venue">NeurIPS 2018</p>
+</article></li>
+<li class="paper"><article>
+<h3 class="paper-title"><a href="https://arxiv.org/abs/1806.09455">Compact Policies for Fully-Observable Non-Deterministic Planning as SAT</a></h3>
+<p class="authors"><u>Tomas Geffner</u> and Hector Geffner.</p>
+<p class="venue">ICAPS 2018</p>
+</article></li></ul></section>
+<section class="year-group" id="year-2015" aria-labelledby="heading-2015" data-year="2015"><h3 class="year-heading" id="heading-2015">2015</h3><ul class="paper-list"><li class="paper"><article>
+<h3 class="paper-title"><a href="http://giga15.ru.is/giga15-paper2.pdf">Width-based Planning for General Video-Game Playing</a></h3>
+<p class="authors"><u>Tomas Geffner</u> and Hector Geffner.</p>
+<p class="venue">AAIDE 2015</p>
+</article></li></ul></section></section><section class="section about-section" id="about" aria-labelledby="about-heading"><div class="section-heading"><h2 id="about-heading">A little background</h2></div><div class="about-copy"><p>I obtained my PhD in Computer Science from UMass Amherst in 2023, supervised by Justin Domke.</p>
+<p>During my PhD, I was grateful to intern at VantAI (New York, summer 2023) with Luca Naef and Michael Bronstein; Google DeepMind (London, summer 2022) with Andriy Mnih and George Papamakarios; Microsoft Research (Cambridge UK, summer 2021) with Cheng Zhang, Emre Kiciman and Miltos Allamanis; and Amazon AWS (New York, summer 2018) with Bing Xiang and Ramesh Nallapati.</p>
+<p>Before my PhD, I also did some work on planning. Outside research, I try to play tennis.</p></div></section><section class="section service-section" id="service" aria-labelledby="service-heading">
+<div class="section-heading"><h2 id="service-heading">Service &amp; teaching</h2></div>
+<div class="service-grid"><div><h3>Conference reviewing</h3><dl class="review-list"><div><dt>NeurIPS</dt><dd>2019, 2020, 2021, 2022, 2025, 2026</dd></div><div><dt>ICML</dt><dd>2020, 2025, 2026</dd></div><div><dt>ICLR</dt><dd>2021, 2022, 2025, 2026, 2027</dd></div><div><dt>AISTATS</dt><dd>2021</dd></div></dl>
+<h3>Organizing &amp; journal reviewing</h3><p>Publication chair, AISTATS 2023<br>Reviewer for JMLR and TMLR</p></div>
+<div><h3>Teaching assistant</h3><ul class="teaching-list"><li>Probabilistic graphical models</li><li>Machine learning</li><li>Introduction to data structures</li><li>Introduction to natural language processing</li><li>Human–computer interaction</li></ul></div></div></section></main><footer id="contact"><div class="contact-block"><div><p class="eyebrow">Get in touch</p><h2>Contact</h2></div><dl class="contact-details"><div><dt>NVIDIA</dt><dd>t[lastname]@nvidia.com</dd></div><div><dt>Personal</dt><dd>[firstname][lastname]@gmail.com</dd></div></dl></div><div class="footer-bottom"><span>Tomas Geffner</span><a href="#top">Back to top ↑</a></div></footer></div>
 
 </body>
 </html>
-
-
-<!-- https://www.umass.edu/it/support/web-hosting/connect-oit-web-hosting-servers-ssh-terminal-macintosh -->
-<!-- Connect to website -->
-
-<!-- https://www.digitalocean.com/community/tutorials/how-to-use-sftp-to-securely-transfer-files-with-a-remote-server-es -->
-<!-- lls
-lpwd
-lcd
-put index.html /home/tgeffner/public_html
- -->
